@@ -1,5 +1,5 @@
 {
-  "name": "01-dom-reservas",
+  "name": "02-dom-poo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,6 +12,6 @@
     "vite": "^5.4.10"
   },
   "dependencies": {
-    "01-dom-reservas": "file:"
+    "02-dom-poo": "file:"
   }
 }
