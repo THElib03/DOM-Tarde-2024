@@ -26,6 +26,7 @@ function paintInterface(){
         cart.addProduct(name, quant, price);
 
         paintCart();
+        event.target.reset();
     };
 
     app.innerHTML = `
@@ -50,13 +51,21 @@ const productOptions = (event) => {
     const index = Number(event.target.dataset.id);
     if(event.target.classList.contains('delete-btn')){
         cart.deleteProduct(index);
-        console.log('hola');
         paintCart();
     }
 
     if(event.target.classList.contains('edit-btn')){
+        const newQuant = prompt("Input the new quantity", cart.products[index].quantity);
 
-    }
+        if(Number.parseInt(newQuant) > 0){
+            cart.editProduct(index, newQuant);
+        } else {
+            alert("Please enter a valid integer greater than 0");
+        }
+
+        paintCart();
+    };
+
 }
 
 function paintCart(){
